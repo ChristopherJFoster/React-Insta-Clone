@@ -73,6 +73,13 @@ class App extends Component {
     }
   }
 
+  clearLocalStorage = e => {
+    e.preventDefault();
+    localStorage.clear();
+    // this.componentDidMount();
+    window.location.reload();
+  };
+
   changeHandler = e => {
     e.preventDefault();
     this.setState({
@@ -139,6 +146,7 @@ class App extends Component {
       <div className="container">
         <header className="header">
           <SearchBar
+            clearLocalStorage={this.clearLocalStorage}
             changeHandler={this.changeHandler}
             searchText={this.searchText}
           />
