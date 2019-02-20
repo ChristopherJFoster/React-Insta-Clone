@@ -15,7 +15,6 @@ const authenticate = App => Login => {
     }
 
     render() {
-      console.log("authenticate render");
       return this.state.loggedIn ? <PostsPage /> : <Login />;
     }
   };

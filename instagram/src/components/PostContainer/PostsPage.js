@@ -39,12 +39,12 @@ class PostsPage extends React.Component {
             post.timestamp,
             "MMMM Do YYYY, h:mm:ss a"
           ).valueOf(),
-          comments: post.comments
+          comments: post.comments,
+          newCommentText: ""
         });
       });
       this.setState({
         data: data,
-        newCommentText: "",
         searchText: ""
       });
     }
@@ -86,6 +86,20 @@ class PostsPage extends React.Component {
     });
   };
 
+  changeHandlerNested = (e, timestamp) => {
+    e.preventDefault();
+    const postIndex = this.state.data.findIndex(
+      post => post.timestamp === timestamp
+    );
+    let tempData = [...this.state.data];
+    // The following was very difficult to debug. Since [e.target.name] is being used as a property name here, why isn't it:
+    // tempData[postIndex].[e.target.name] (with a dot)?
+    tempData[postIndex][e.target.name] = e.target.value;
+    this.setState({
+      data: tempData
+    });
+  };
+
   toggleLike = (e, timestamp) => {
     e.preventDefault();
     // Finds index of the post that was liked:
@@ -120,23 +134,23 @@ class PostsPage extends React.Component {
 
   addNewComment = (e, timestamp) => {
     e.preventDefault();
-    const newComment = {
-      // We haven't really worked out the username of the commenter, so I hardcoded this one for now:
-      username: "catslanderer",
-      text: this.state.newCommentText
-    };
     // Finds index of the post that was commented on:
     const postIndex = this.state.data.findIndex(
       post => post.timestamp === timestamp
     );
+    const newComment = {
+      // The new comment is attributed to the logged-in username:
+      username: localStorage.getItem("username"),
+      text: this.state.data[postIndex].newCommentText
+    };
     // Sets up tempData to update nested state:
     const tempData = [...this.state.data];
-    // Pushes new comment to comment array:
+    // Pushes new comment to comment array and clears the comment form:
     tempData[postIndex].comments.push(newComment);
+    tempData[postIndex].newCommentText = "";
     // Updates state to include new comment and clears the comment form:
     this.setState({
-      data: tempData,
-      newCommentText: ""
+      data: tempData
     });
   };
 
@@ -151,8 +165,7 @@ class PostsPage extends React.Component {
         <PostContainer
           posts={this.state.data}
           toggleLike={this.toggleLike}
-          newCommentText={this.state.newCommentText}
-          changeHandler={this.changeHandler}
+          changeHandlerNested={this.changeHandlerNested}
           addNewComment={this.addNewComment}
         />
       </div>
