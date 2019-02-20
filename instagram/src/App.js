@@ -2,17 +2,16 @@ import React from "react";
 import "./css/main.css";
 import authenticate from "./authenticate/authenticate";
 import PostsPage from "./components/PostContainer/PostsPage";
+import Login from "./components/Login/Login";
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      data: []
-    };
+    this.state = {};
   }
   render() {
     console.log("App render");
-    return <PostsPage />;
+    return localStorage.getItem("username") ? <PostsPage /> : <Login />;
   }
 }
 
