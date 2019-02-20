@@ -64,7 +64,7 @@ class App extends Component {
     }
   }
 
-  addNewLike = (e, timestamp) => {
+  toggleLike = (e, timestamp) => {
     e.preventDefault();
     // Finds index of the post that was liked:
     const postIndex = this.state.data.findIndex(
@@ -83,6 +83,8 @@ class App extends Component {
         tempData,
         tempLiked
       });
+      // Changes the icon to a filled-in heart to visually represent that the user liked the post:
+      e.target.className = "icon-post fas fa-heart";
       // If post already liked, then a like is taken away:
     } else if (this.state.liked[timestamp]) {
       // Dencrements likes by 1:
@@ -93,6 +95,8 @@ class App extends Component {
         tempData,
         tempLiked
       });
+      // Changes the icon to a hollow heart to visually represent that the user unliked the post:
+      e.target.className = "icon-post far fa-heart";
     }
   };
 
@@ -129,7 +133,7 @@ class App extends Component {
         </header>
         <PostContainer
           posts={this.state.data}
-          addNewLike={this.addNewLike}
+          toggleLike={this.toggleLike}
           newCommentText={this.state.newCommentText}
           changeHandler={this.changeHandler}
           addNewComment={this.addNewComment}

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const Post = ({
   post,
-  addNewLike,
+  toggleLike,
   newCommentText,
   changeHandler,
   addNewComment
@@ -21,7 +21,7 @@ const Post = ({
       </div>
       <img src={post.imageUrl} alt={post.imageUrl} className="post-image" />
       <i
-        onClick={e => addNewLike(e, post.timestamp)}
+        onClick={e => toggleLike(e, post.timestamp)}
         className="icon-post far fa-heart"
       />
       <i className="icon-post far fa-comment" />
