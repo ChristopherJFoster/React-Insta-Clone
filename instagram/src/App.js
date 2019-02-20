@@ -76,7 +76,6 @@ class App extends Component {
   clearLocalStorage = e => {
     e.preventDefault();
     localStorage.clear();
-    // this.componentDidMount();
     window.location.reload();
   };
 
