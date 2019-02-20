@@ -143,13 +143,11 @@ class PostsPage extends React.Component {
   render() {
     return (
       <div className="container">
-        <header className="header">
-          <SearchBar
-            clearLocalStorage={this.clearLocalStorage}
-            changeHandler={this.changeHandler}
-            searchText={this.searchText}
-          />
-        </header>
+        <SearchBar
+          clearLocalStorage={this.clearLocalStorage}
+          changeHandler={this.changeHandler}
+          searchText={this.searchText}
+        />
         <PostContainer
           posts={this.state.data}
           toggleLike={this.toggleLike}
