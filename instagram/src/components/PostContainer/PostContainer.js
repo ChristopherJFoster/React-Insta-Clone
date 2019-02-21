@@ -1,6 +1,14 @@
 import React from "react";
 import Post from "../Post/Post";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+
+const StyledPostContainerSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+`;
 
 const PostContainer = ({
   posts,
@@ -9,7 +17,7 @@ const PostContainer = ({
   addNewComment
 }) => {
   return (
-    <section className="post-container">
+    <StyledPostContainerSection>
       {posts.map(post => (
         <Post
           key={post.timestamp}
@@ -20,7 +28,7 @@ const PostContainer = ({
           addNewComment={addNewComment}
         />
       ))}
-    </section>
+    </StyledPostContainerSection>
   );
 };
 

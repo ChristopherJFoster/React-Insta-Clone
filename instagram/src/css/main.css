@@ -177,12 +177,6 @@ body {
   width: 1200px;
   user-select: none;
 }
-.post-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-top: 20px;
-}
 .post {
   width: 600px;
   margin: 0 auto 20px auto;

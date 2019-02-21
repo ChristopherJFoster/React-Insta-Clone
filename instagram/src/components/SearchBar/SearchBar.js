@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import igWordmark from "../../assets/igWordmark.png";
 
-const StyledSearchBarDiv = styled.div`
+const StyledHeader = styled.header`
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -59,7 +59,7 @@ const StyledIconSet = styled.div`
 
 const SearchBar = ({ clearLocalStorage, changeHandler, searchText }) => {
   return (
-    <StyledSearchBarDiv>
+    <StyledHeader>
       <StyledLogoSet>
         <i onClick={clearLocalStorage} className="logo fab fa-instagram" />
         <img
@@ -85,7 +85,7 @@ const SearchBar = ({ clearLocalStorage, changeHandler, searchText }) => {
         <i className="icon-searchbar far fa-compass" />
         <i className="icon-searchbar far fa-user" />
       </StyledIconSet>
-    </StyledSearchBarDiv>
+    </StyledHeader>
   );
 };
 
