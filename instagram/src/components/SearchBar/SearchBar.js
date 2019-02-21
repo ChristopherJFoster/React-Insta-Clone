@@ -12,14 +12,18 @@ const SearchBar = ({ clearLocalStorage, changeHandler, searchText }) => {
           className="wordmark-search-bar"
         />
       </div>
-      <input
-        name="searchText"
-        value={searchText}
-        type="text"
-        placeholder="&#xf002; Search Usernames"
-        onChange={changeHandler}
-        className="fas search-input"
-      />
+      {/* Removed Font Awesome from placeholder because it takes control of the font-family of the placeholder text, turning it into an ugly serif font. */}
+      <div className="search-box">
+        <i className="fas fa-search" />
+        <input
+          name="searchText"
+          value={searchText}
+          type="text"
+          placeholder="Search Usernames"
+          onChange={changeHandler}
+          className="search-input"
+        />
+      </div>
       <div className="icon-set">
         <i className="icon-searchbar far fa-heart" />
         <i className="icon-searchbar far fa-compass" />

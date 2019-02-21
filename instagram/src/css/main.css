@@ -157,14 +157,18 @@ body {
   margin: 5px;
   padding: 5px 0 6px 10px;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #ffd380;
+  background: lemonchiffon;
   font-size: 2.5em;
 }
 .login-button {
   margin: 5px;
+  border-radius: 5px;
+  border: none;
   width: 50%;
   height: 37px;
   font-size: 2em;
+  background: #ffd380;
 }
 .container {
   border-radius: 8px;
@@ -199,20 +203,21 @@ body {
   width: 160px;
   height: 40px;
 }
-.search {
-  border-radius: 6px;
-  border: 1px solid #dfdfdf;
-  background: #f3f3f3;
-  width: 250px;
-  height: 30px;
-  margin-right: 100px;
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+}
+.search-box i {
+  font-size: 1.6em;
+  padding: 0 5px 0 10px;
 }
 .search-input {
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-  padding: 5px;
-  text-align: center;
+  width: 150px;
   font-size: 1.6em;
+  border: none;
+  padding: 7px 5px 5px 5px;
 }
 .icon-set {
   display: flex;
@@ -232,6 +237,7 @@ body {
 .post {
   width: 600px;
   margin: 0 auto 20px auto;
+  border-radius: 5px;
   border: 1px solid lightgrey;
 }
 .visible-false {
