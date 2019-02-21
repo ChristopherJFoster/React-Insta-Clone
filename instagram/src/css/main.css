@@ -170,13 +170,6 @@ body {
   font-size: 2em;
   background: #ffd380;
 }
-.container {
-  border-radius: 8px;
-  margin: 40px auto 0 auto;
-  border: 7px dashed #ffd380;
-  width: 1200px;
-  user-select: none;
-}
 .post {
   width: 600px;
   margin: 0 auto 20px auto;

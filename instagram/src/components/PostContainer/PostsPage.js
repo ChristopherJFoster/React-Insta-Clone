@@ -1,9 +1,18 @@
 import "../../css/main.css";
 import React from "react";
+import styled from "styled-components";
 import moment from "moment";
 import dummyData from "../../dummy-data";
 import SearchBar from "../SearchBar/SearchBar";
 import PostContainer from "./PostContainer";
+
+const StyledContainerDiv = styled.div`
+  border-radius: 8px;
+  margin: 40px auto 0 auto;
+  border: 7px dashed #ffd380;
+  width: 1200px;
+  user-select: none;
+`;
 
 class PostsPage extends React.Component {
   constructor() {
@@ -155,7 +164,7 @@ class PostsPage extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <StyledContainerDiv>
         <SearchBar
           clearLocalStorage={this.clearLocalStorage}
           changeHandler={this.changeHandler}
@@ -167,7 +176,7 @@ class PostsPage extends React.Component {
           changeHandlerNested={this.changeHandlerNested}
           addNewComment={this.addNewComment}
         />
-      </div>
+      </StyledContainerDiv>
     );
   }
 }
