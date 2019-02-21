@@ -6,9 +6,9 @@ import dummyData from "../../dummy-data";
 import SearchBar from "../SearchBar/SearchBar";
 import PostContainer from "./PostContainer";
 
-const StyledContainerDiv = styled.div`
+const ContainerDiv = styled.div`
   border-radius: 8px;
-  margin: 40px auto 0 auto;
+  margin: 40px auto 40px auto;
   border: 7px dashed #ffd380;
   width: 1200px;
   user-select: none;
@@ -164,7 +164,7 @@ class PostsPage extends React.Component {
 
   render() {
     return (
-      <StyledContainerDiv>
+      <ContainerDiv>
         <SearchBar
           clearLocalStorage={this.clearLocalStorage}
           changeHandler={this.changeHandler}
@@ -176,9 +176,9 @@ class PostsPage extends React.Component {
           changeHandlerNested={this.changeHandlerNested}
           addNewComment={this.addNewComment}
         />
-      </StyledContainerDiv>
+      </ContainerDiv>
     );
   }
 }
 
-export default PostsPage;
+export { PostsPage, ContainerDiv };

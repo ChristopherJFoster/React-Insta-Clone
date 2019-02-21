@@ -133,43 +133,6 @@ body {
   font-size: 62.5%;
   font-family: sans-serif;
 }
-.container-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 8px;
-  margin: 40px auto 0 auto;
-  padding: 40px 0;
-  border: 7px dashed #ffd380;
-  width: 1200px;
-  user-select: none;
-}
-.wordmark-login {
-  margin: 100px 0;
-  width: 80%;
-}
-.input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.login-input {
-  margin: 5px;
-  padding: 5px 0 6px 10px;
-  border-radius: 5px;
-  border: 1px solid #ffd380;
-  background: lemonchiffon;
-  font-size: 2.5em;
-}
-.login-button {
-  margin: 5px;
-  border-radius: 5px;
-  border: none;
-  width: 50%;
-  height: 37px;
-  font-size: 2em;
-  background: #ffd380;
-}
 .post {
   width: 600px;
   margin: 0 auto 20px auto;
