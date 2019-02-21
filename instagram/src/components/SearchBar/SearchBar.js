@@ -16,9 +16,9 @@ const SearchBar = ({ clearLocalStorage, changeHandler, searchText }) => {
         name="searchText"
         value={searchText}
         type="text"
-        placeholder="🔍 Search Usernames"
+        placeholder="&#xf002; Search Usernames"
         onChange={changeHandler}
-        className="search-input"
+        className="fas search-input"
       />
       <div className="icon-set">
         <i className="icon-searchbar far fa-heart" />
