@@ -1,9 +1,9 @@
+import "../../css/main.css";
 import React from "react";
 import moment from "moment";
 import dummyData from "../../dummy-data";
 import SearchBar from "../SearchBar/SearchBar";
 import PostContainer from "./PostContainer";
-import "../../css/main.css";
 
 class PostsPage extends React.Component {
   constructor() {

@@ -177,57 +177,6 @@ body {
   width: 1200px;
   user-select: none;
 }
-.search-bar {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid lightgrey;
-}
-.logo-set {
-  display: flex;
-  width: 300px;
-  height: 100px;
-  align-items: center;
-  margin-left: 30px;
-}
-.logo {
-  font-size: 3em;
-  padding-right: 25px;
-  border-right: 1px solid grey;
-  cursor: pointer;
-}
-.wordmark-search-bar {
-  margin-left: 25px;
-  padding-top: 10px;
-  width: 160px;
-  height: 40px;
-}
-.search-box {
-  display: flex;
-  align-items: center;
-  border: 1px solid lightgrey;
-  border-radius: 5px;
-}
-.search-box i {
-  font-size: 1.6em;
-  padding: 0 5px 0 10px;
-}
-.search-input {
-  width: 150px;
-  font-size: 1.6em;
-  border: none;
-  padding: 7px 5px 5px 5px;
-}
-.icon-set {
-  display: flex;
-  justify-content: space-around;
-  width: 200px;
-  margin-right: 30px;
-}
-.icon-searchbar {
-  font-size: 3em;
-}
 .post-container {
   display: flex;
   flex-direction: column;
