@@ -133,44 +133,6 @@ body {
   font-size: 62.5%;
   font-family: sans-serif;
 }
-.post {
-  width: 600px;
-  margin: 0 auto 20px auto;
-  border-radius: 5px;
-  border: 1px solid lightgrey;
-}
-.visible-false {
-  display: none;
-}
-.visible-true {
-  display: inline;
-}
-.post-header {
-  height: 60px;
-  display: flex;
-  align-items: center;
-}
-.user-thumbnail {
-  margin-left: 17px;
-  border-radius: 100%;
-  width: 30px;
-  height: 30px;
-}
-h3 {
-  font-size: 1.5em;
-  margin-left: 12px;
-  font-weight: bold;
-}
-.post-image {
-  width: 600px;
-}
-.icon-post {
-  font-size: 2.4em;
-  padding: 10px 0 10px 15px;
-}
-.like {
-  cursor: pointer;
-}
 .comments {
   margin: 12px 12px 0 12px;
 }
@@ -195,9 +157,4 @@ h5 {
 p {
   font-size: 1.5em;
   margin-left: 7px;
-}
-.username {
-  font-size: 1.5em;
-  margin-left: 0;
-  font-weight: bold;
 }

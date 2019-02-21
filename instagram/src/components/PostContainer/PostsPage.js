@@ -1,18 +1,10 @@
 import "../../css/main.css";
 import React from "react";
-import styled from "styled-components";
+import { ContainerDiv } from "../../myStyledComps/myStyledComps";
 import moment from "moment";
 import dummyData from "../../dummy-data";
 import SearchBar from "../SearchBar/SearchBar";
 import PostContainer from "./PostContainer";
-
-const ContainerDiv = styled.div`
-  border-radius: 8px;
-  margin: 40px auto 40px auto;
-  border: 7px dashed #ffd380;
-  width: 1200px;
-  user-select: none;
-`;
 
 class PostsPage extends React.Component {
   constructor() {

@@ -1,43 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 import igWordmark from "../../assets/igWordmark.png";
-import { ContainerDiv } from "../PostContainer/PostsPage";
-
-const LoginContainerDiv = styled(ContainerDiv)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 0;
-  .wordmark-login {
-    margin: 100px 0;
-    width: 80%;
-  }
-`;
-
-const InputDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-`;
-
-const LoginInput = styled.input`
-  margin: 5px;
-  padding: 5px 0 6px 10px;
-  border-radius: 5px;
-  border: 1px solid #ffd380;
-  background: lemonchiffon;
-  font-size: 2.5em;
-`;
-
-const LoginButton = styled.button`
-  margin: 5px;
-  border-radius: 5px;
-  border: none;
-  width: 50%;
-  height: 37px;
-  font-size: 2em;
-  background: #ffd380;
-`;
+import {
+  LoginContainerDiv,
+  InputDiv,
+  LoginInput,
+  LoginButton
+} from "../../myStyledComps/myStyledComps";
 
 class Login extends React.Component {
   constructor() {
