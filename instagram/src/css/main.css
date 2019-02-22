@@ -126,10 +126,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-.rtb {
-  border: 2px dashed red;
-}
 body {
   font-size: 62.5%;
   font-family: sans-serif;
+}
+.rtb {
+  border: 2px dashed red;
 }
