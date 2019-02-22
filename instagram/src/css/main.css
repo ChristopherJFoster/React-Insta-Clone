@@ -133,28 +133,3 @@ body {
   font-size: 62.5%;
   font-family: sans-serif;
 }
-.comments {
-  margin: 12px 12px 0 12px;
-}
-h5 {
-  color: darkgrey;
-  font-size: 1.2em;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid lightgrey;
-}
-.comment-input {
-  padding-left: 10px;
-  width: 100%;
-  height: 50px;
-  border: none;
-  font-size: 1.5em;
-}
-.comment {
-  display: flex;
-  margin-top: 8px;
-}
-p {
-  font-size: 1.5em;
-  margin-left: 7px;
-}

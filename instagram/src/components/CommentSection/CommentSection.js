@@ -2,6 +2,11 @@ import React from "react";
 import Comment from "../Comment/Comment";
 import PropTypes from "prop-types";
 import moment from "moment";
+import {
+  CommentsDiv,
+  Timestamp,
+  CommentInput
+} from "../../myStyledComps/myStyledComps";
 
 const CommentSection = ({
   comments,
@@ -11,25 +16,24 @@ const CommentSection = ({
   addNewComment
 }) => {
   return (
-    <section className="comments">
+    <CommentsDiv>
       {comments.map((comment, index) => (
         // Used index for key for now - Date.now() wasn't working for some reason:
         <Comment comment={comment} key={index} />
       ))}
-      <h5 className="timestamp">
+      <Timestamp className="timestamp">
         {moment.duration(Date.now() - timestamp).humanize()} ago
-      </h5>
+      </Timestamp>
       <form onSubmit={e => addNewComment(e, timestamp)}>
-        <input
+        <CommentInput
           name="newCommentText"
           value={newCommentText}
           type="text"
           placeholder="Add a comment..."
           onChange={e => changeHandlerNested(e, timestamp)}
-          className="comment-input"
         />
       </form>
-    </section>
+    </CommentsDiv>
   );
 };
 

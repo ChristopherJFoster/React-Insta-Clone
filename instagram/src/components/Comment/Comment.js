@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {
+  CommentDiv,
+  UsernameComment,
+  CommentP
+} from "../../myStyledComps/myStyledComps";
 
 const Comment = ({ comment }) => {
   return (
-    <div className="comment">
-      <h3 className="username">{comment.username}</h3>
-      <p>{comment.text}</p>
-    </div>
+    <CommentDiv>
+      <UsernameComment className="username">{comment.username}</UsernameComment>
+      <CommentP>{comment.text}</CommentP>
+    </CommentDiv>
   );
 };
 

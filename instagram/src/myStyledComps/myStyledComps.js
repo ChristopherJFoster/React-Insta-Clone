@@ -102,10 +102,40 @@ const LikeCounter = styled.h3`
   font-weight: bold;
 `;
 
+const CommentsDiv = styled.div`
+  margin: 12px 12px 0 12px;
+`;
+
+const Timestamp = styled.h5`
+  color: darkgrey;
+  font-size: 1.2em;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgrey;
+`;
+
+const CommentInput = styled.input`
+  padding-left: 10px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  font-size: 1.5em;
+`;
+
+const CommentDiv = styled.div`
+  display: flex;
+  margin-top: 8px;
+`;
+
 const UsernameComment = styled.h3`
   font-size: 1.5em;
   margin-left: 0;
   font-weight: bold;
+`;
+
+const CommentP = styled.p`
+  font-size: 1.5em;
+  margin-left: 7px;
 `;
 
 export {
@@ -123,5 +153,10 @@ export {
   IconPost,
   IconLike,
   LikeCounter,
-  UsernameComment
+  CommentsDiv,
+  Timestamp,
+  CommentInput,
+  CommentDiv,
+  UsernameComment,
+  CommentP
 };
