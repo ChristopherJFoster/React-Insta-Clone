@@ -57,17 +57,13 @@ const PostHeader = styled.header`
   align-items: center;
 `;
 
+// Considition rendering at the component level:
 const PostContainer = styled.section`
   width: 600px;
   margin: 0 auto 20px auto;
   border-radius: 5px;
   border: 1px solid lightgrey;
-  .visible-false {
-    display: none;
-  }
-  .visible-true {
-    display: inline;
-  }
+  display: ${post => (post.visible === true ? "inline" : "none")};
 `;
 
 const UsernamePost = styled.h3`

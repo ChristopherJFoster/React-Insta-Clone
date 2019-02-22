@@ -14,25 +14,22 @@ import {
 
 const Post = ({
   post,
+  toggleSelectPost,
   toggleLike,
   newCommentText,
   changeHandlerNested,
   addNewComment
 }) => {
   return (
-    <PostContainer className={`post visible-${post.visible}`}>
+    <PostContainer visible={post.visible}>
       <PostHeader>
-        <ImageUser
-          src={post.thumbnailUrl}
-          alt="post.thumbnailUrl"
-          className="user-thumbnail"
-        />
+        <ImageUser src={post.thumbnailUrl} alt="post.thumbnailUrl" />
         <UsernamePost>{post.username}</UsernamePost>
       </PostHeader>
       <ImagePost
+        onClick={e => toggleSelectPost(e, post.timestamp)}
         src={post.imageUrl}
         alt={post.imageUrl}
-        className="post-image"
       />
       <IconLike
         onClick={e => toggleLike(e, post.timestamp)}
@@ -47,7 +44,6 @@ const Post = ({
         newCommentText={newCommentText}
         changeHandlerNested={changeHandlerNested}
         addNewComment={addNewComment}
-        className="comment-section"
       />
     </PostContainer>
   );

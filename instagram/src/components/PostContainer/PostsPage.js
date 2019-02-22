@@ -24,7 +24,8 @@ class PostsPage extends React.Component {
       this.setState({
         data: parsedState.data,
         newCommentText: parsedState.newCommentText,
-        searchText: parsedState.searchText
+        searchText: parsedState.searchText,
+        selected: false
       });
     } else if (!parsedState) {
       // There might be a more succinct way to do this, but the following turns the timestamp string from dummyData into Unix Epoch Time (while leaving the other data alone). Earlier I had just edited dummy-data.js, so this is more elegant.
@@ -46,7 +47,8 @@ class PostsPage extends React.Component {
       });
       this.setState({
         data: data,
-        searchText: ""
+        searchText: "",
+        selected: false
       });
     }
   }
@@ -98,6 +100,32 @@ class PostsPage extends React.Component {
     this.setState({
       data: tempData
     });
+  };
+
+  toggleSelectPost = (e, timestamp) => {
+    e.preventDefault();
+
+    let tempData = [...this.state.data];
+
+    if (this.state.selected === false) {
+      tempData.forEach(post => {
+        if (post.timestamp !== timestamp) {
+          post.visible = false;
+        }
+      });
+      this.setState({
+        data: tempData,
+        selected: true
+      });
+    } else if (this.state.selected === true) {
+      tempData.forEach(post => {
+        post.visible = true;
+      });
+      this.setState({
+        data: tempData,
+        selected: false
+      });
+    }
   };
 
   toggleLike = (e, timestamp) => {
@@ -164,6 +192,7 @@ class PostsPage extends React.Component {
         />
         <PostContainer
           posts={this.state.data}
+          toggleSelectPost={this.toggleSelectPost}
           toggleLike={this.toggleLike}
           changeHandlerNested={this.changeHandlerNested}
           addNewComment={this.addNewComment}
@@ -173,4 +202,4 @@ class PostsPage extends React.Component {
   }
 }
 
-export { PostsPage, ContainerDiv };
+export default PostsPage;

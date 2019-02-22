@@ -1,5 +1,5 @@
 import React from "react";
-import { PostsPage } from "../components/PostContainer/PostsPage";
+import PostsPage from "../components/PostContainer/PostsPage";
 
 const authenticate = App => Login => {
   return class extends React.Component {

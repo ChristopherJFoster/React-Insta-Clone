@@ -5,6 +5,7 @@ import { PostContainerDiv } from "../../myStyledComps/myStyledComps";
 
 const PostContainer = ({
   posts,
+  toggleSelectPost,
   toggleLike,
   changeHandlerNested,
   addNewComment
@@ -15,6 +16,7 @@ const PostContainer = ({
         <Post
           key={post.timestamp}
           post={post}
+          toggleSelectPost={toggleSelectPost}
           toggleLike={toggleLike}
           newCommentText={post.newCommentText}
           changeHandlerNested={changeHandlerNested}

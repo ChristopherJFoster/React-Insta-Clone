@@ -21,7 +21,7 @@ const CommentSection = ({
         // Used index for key for now - Date.now() wasn't working for some reason:
         <Comment comment={comment} key={index} />
       ))}
-      <Timestamp className="timestamp">
+      <Timestamp>
         {moment.duration(Date.now() - timestamp).humanize()} ago
       </Timestamp>
       <form onSubmit={e => addNewComment(e, timestamp)}>
