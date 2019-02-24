@@ -29,6 +29,7 @@ const LoginContainerDiv = styled(ContainerDiv)`
 const StyledHeader = styled.header`
   display: flex;
   width: 100%;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid lightgrey;
@@ -36,8 +37,7 @@ const StyledHeader = styled.header`
 
 const StyledLogoSet = styled.div`
   display: flex;
-  width: 300px;
-  height: 100px;
+  width: 250px;
   align-items: center;
   margin-left: 30px;
   .logo {
@@ -76,9 +76,9 @@ const StyledSearchBox = styled.div`
 
 const StyledIconSet = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 200px;
-  margin-right: 30px;
+  justify-content: space-between;
+  width: 170px;
+  margin: 0 30px 0 80px;
   .icon-searchbar {
     font-size: 3em;
   }
