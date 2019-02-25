@@ -1,6 +1,16 @@
 import React from "react";
 import CommentSection from "../CommentSection/CommentSection";
 import PropTypes from "prop-types";
+import {
+  PostHeader,
+  PostContainer,
+  UsernamePost,
+  ImageUser,
+  ImagePost,
+  IconPost,
+  IconLike,
+  LikeCounter
+} from "../../myStyledComps/myStyledComps";
 
 const Post = ({
   post,
@@ -10,27 +20,27 @@ const Post = ({
   addNewComment
 }) => {
   return (
-    <section className={`post visible-${post.visible}`}>
-      <div className="post-header">
-        <img
+    <PostContainer className={`post visible-${post.visible}`}>
+      <PostHeader>
+        <ImageUser
           src={post.thumbnailUrl}
           alt="post.thumbnailUrl"
           className="user-thumbnail"
         />
-        <h3>{post.username}</h3>
-      </div>
-      <img src={post.imageUrl} alt={post.imageUrl} className="post-image" />
-      <i
+        <UsernamePost>{post.username}</UsernamePost>
+      </PostHeader>
+      <ImagePost
+        src={post.imageUrl}
+        alt={post.imageUrl}
+        className="post-image"
+      />
+      <IconLike
         onClick={e => toggleLike(e, post.timestamp)}
         // Heart icon is filled (fas) or hollow (far) based on whether the post is liked:
-        className={
-          post.liked
-            ? "icon-post like fas fa-heart"
-            : "icon-post like far fa-heart"
-        }
+        className={post.liked ? "like fas fa-heart" : "like far fa-heart"}
       />
-      <i className="icon-post far fa-comment" />
-      <h3>{post.likes} likes</h3>
+      <IconPost className="far fa-comment" />
+      <LikeCounter>{post.likes} likes</LikeCounter>
       <CommentSection
         comments={post.comments}
         timestamp={post.timestamp}
@@ -39,7 +49,7 @@ const Post = ({
         addNewComment={addNewComment}
         className="comment-section"
       />
-    </section>
+    </PostContainer>
   );
 };
 

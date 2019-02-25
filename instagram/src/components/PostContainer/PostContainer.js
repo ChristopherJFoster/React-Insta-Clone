@@ -1,6 +1,7 @@
 import React from "react";
 import Post from "../Post/Post";
 import PropTypes from "prop-types";
+import { PostContainerDiv } from "../../myStyledComps/myStyledComps";
 
 const PostContainer = ({
   posts,
@@ -9,7 +10,7 @@ const PostContainer = ({
   addNewComment
 }) => {
   return (
-    <section className="post-container">
+    <PostContainerDiv>
       {posts.map(post => (
         <Post
           key={post.timestamp}
@@ -20,7 +21,7 @@ const PostContainer = ({
           addNewComment={addNewComment}
         />
       ))}
-    </section>
+    </PostContainerDiv>
   );
 };
 

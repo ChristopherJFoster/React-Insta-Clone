@@ -1,5 +1,11 @@
 import React from "react";
 import igWordmark from "../../assets/igWordmark.png";
+import {
+  LoginContainerDiv,
+  InputDiv,
+  LoginInput,
+  LoginButton
+} from "../../myStyledComps/myStyledComps";
 
 class Login extends React.Component {
   constructor() {
@@ -22,34 +28,30 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="container-login">
+      <LoginContainerDiv>
         <img
           src={igWordmark}
           alt="instagram wordmark"
           className="wordmark-login"
         />
-        <div className="input-container">
-          <input
+        <InputDiv>
+          <LoginInput
             name="username"
             placeholder="username"
             value={this.state.username}
             type="text"
             onChange={this.changeHandler}
-            className="login-input"
           />
-          <input
+          <LoginInput
             name="password"
             placeholder="password"
             value={this.state.password}
             type="text"
             onChange={this.changeHandler}
-            className="login-input"
           />
-          <button onClick={this.login} className="login-button">
-            Login
-          </button>
-        </div>
-      </div>
+          <LoginButton onClick={this.login}>Login</LoginButton>
+        </InputDiv>
+      </LoginContainerDiv>
     );
   }
 }
