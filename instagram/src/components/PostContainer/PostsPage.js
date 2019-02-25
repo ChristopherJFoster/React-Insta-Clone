@@ -92,8 +92,7 @@ class PostsPage extends React.Component {
       post => post.timestamp === timestamp
     );
     let tempData = [...this.state.data];
-    // The following was very difficult to debug. Since [e.target.name] is being used as a property name here, why isn't it:
-    // tempData[postIndex].[e.target.name] (with a dot)?
+    // The following was very difficult to debug. Since [e.target.name] is being used as a property name here, why isn't it: tempData[postIndex].[e.target.name] (with a dot)
     tempData[postIndex][e.target.name] = e.target.value;
     this.setState({
       data: tempData

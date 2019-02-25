@@ -1,4 +1,5 @@
 import React from "react";
+import igWordmark from "../../assets/igWordmark.png";
 
 class Login extends React.Component {
   constructor() {
@@ -21,23 +22,34 @@ class Login extends React.Component {
 
   render() {
     return (
-      <>
-        <input
-          name="username"
-          placeholder="username"
-          value={this.state.username}
-          type="text"
-          onChange={this.changeHandler}
+      <div className="container-login">
+        <img
+          src={igWordmark}
+          alt="instagram wordmark"
+          className="wordmark-login"
         />
-        <input
-          name="password"
-          placeholder="password"
-          value={this.state.password}
-          type="text"
-          onChange={this.changeHandler}
-        />
-        <button onClick={this.login}>Login</button>
-      </>
+        <div className="input-container">
+          <input
+            name="username"
+            placeholder="username"
+            value={this.state.username}
+            type="text"
+            onChange={this.changeHandler}
+            className="login-input"
+          />
+          <input
+            name="password"
+            placeholder="password"
+            value={this.state.password}
+            type="text"
+            onChange={this.changeHandler}
+            className="login-input"
+          />
+          <button onClick={this.login} className="login-button">
+            Login
+          </button>
+        </div>
+      </div>
     );
   }
 }
