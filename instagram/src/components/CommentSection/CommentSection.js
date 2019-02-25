@@ -7,7 +7,7 @@ const CommentSection = ({
   comments,
   timestamp,
   newCommentText,
-  changeHandler,
+  changeHandlerNested,
   addNewComment
 }) => {
   return (
@@ -25,7 +25,7 @@ const CommentSection = ({
           value={newCommentText}
           type="text"
           placeholder="Add a comment..."
-          onChange={changeHandler}
+          onChange={e => changeHandlerNested(e, timestamp)}
           className="comment-input"
         />
       </form>

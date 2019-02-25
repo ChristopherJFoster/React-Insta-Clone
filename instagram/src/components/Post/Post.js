@@ -6,7 +6,7 @@ const Post = ({
   post,
   toggleLike,
   newCommentText,
-  changeHandler,
+  changeHandlerNested,
   addNewComment
 }) => {
   return (
@@ -22,14 +22,11 @@ const Post = ({
       <img src={post.imageUrl} alt={post.imageUrl} className="post-image" />
       <i
         onClick={e => toggleLike(e, post.timestamp)}
-        // // Changes the icon to a filled-in heart to visually represent that the user liked the post:
-        // e.target.className = "icon-post fas fa-heart";
-
-        // // Changes the icon to a hollow heart to visually represent that the user unliked the post:
-        // e.target.className = "icon-post far fa-heart";
-
+        // Heart icon is filled (fas) or hollow (far) based on whether the post is liked:
         className={
-          post.liked ? "icon-post fas fa-heart" : "icon-post far fa-heart"
+          post.liked
+            ? "icon-post like fas fa-heart"
+            : "icon-post like far fa-heart"
         }
       />
       <i className="icon-post far fa-comment" />
@@ -38,7 +35,7 @@ const Post = ({
         comments={post.comments}
         timestamp={post.timestamp}
         newCommentText={newCommentText}
-        changeHandler={changeHandler}
+        changeHandlerNested={changeHandlerNested}
         addNewComment={addNewComment}
         className="comment-section"
       />
